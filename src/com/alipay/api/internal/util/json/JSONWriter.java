@@ -134,7 +134,7 @@ public class JSONWriter {
                     if (!accessor.isAccessible())
                         accessor.setAccessible(true);
                     Object value = accessor.invoke(object, (Object[]) null);
-                    if (value == null)
+                    if (value == null || value.toString().isEmpty())
                         continue;
                     if (addedSomething)
                         add(',');
@@ -146,7 +146,7 @@ public class JSONWriter {
             for (int i = 0; i < ff.length; ++i) {
                 Field field = ff[i];
                 Object value = field.get(object);
-                if (value == null)
+                if (value == null || value.toString().isEmpty())
                     continue;
                 if (addedSomething)
                     add(',');
@@ -182,7 +182,7 @@ public class JSONWriter {
                     if (!accessor.isAccessible())
                         accessor.setAccessible(true);
                     Object value = accessor.invoke(object, (Object[]) null);
-                    if (value == null)
+                    if (value == null || value.toString().isEmpty())
                         continue;
                     if (addedSomething)
                         add(',');
@@ -195,7 +195,7 @@ public class JSONWriter {
                     if (!accessor.isAccessible())
                         accessor.setAccessible(true);
                     Object value = accessor.invoke(object, (Object[]) null);
-                    if (value == null)
+                    if (value == null || value.toString().isEmpty())
                         continue;
                     if (addedSomething)
                         add(',');
